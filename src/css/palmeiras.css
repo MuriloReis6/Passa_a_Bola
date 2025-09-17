@@ -1,0 +1,814 @@
+/* ===== PÁGINA DO PALMEIRAS ===== */
+
+/* Breadcrumb */
+.breadcrumb {
+  background: #f8f9fa;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.breadcrumb .container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: #0056b3;
+}
+
+.breadcrumb .separator {
+  color: #6c757d;
+}
+
+.breadcrumb .current {
+  color: #495057;
+  font-weight: 500;
+}
+
+/* Hero Section */
+.team-hero {
+  background: linear-gradient(135deg, rgba(0, 100, 0, 0.8) 0%, rgba(34, 139, 34, 0.8) 100%), 
+              url('../../assets/imgs/ChatGPT Image 16 de set. de 2025, 19_28_03.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 3rem 0;
+  position: relative;
+}
+
+.team-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.team-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.team-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.team-logo img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-info h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-full-name {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  opacity: 0.9;
+}
+
+.team-location {
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
+  opacity: 0.8;
+}
+
+.team-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Navegação por abas */
+.team-tabs {
+  background: white;
+  border-bottom: 1px solid #e9ecef;
+  padding: 0;
+}
+
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  position: relative;
+}
+
+.tab-btn:hover {
+  color: #006400;
+  background: #f8f9fa;
+}
+
+.tab-btn.active {
+  color: #006400;
+  border-bottom-color: #006400;
+  background: #f8f9fa;
+}
+
+/* Conteúdo das abas */
+.team-content {
+  padding: 3rem 0;
+  background: #f8f9fa;
+  min-height: 60vh;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ===== SEÇÃO ELENCO ===== */
+.elenco-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.elenco-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title-bar {
+  width: 4px;
+  height: 40px;
+  background: #dc3545;
+  border-radius: 2px;
+}
+
+.elenco-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  background: #6c757d;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: #495057;
+  transform: translateY(-2px);
+}
+
+.carousel-btn:active {
+  transform: translateY(0);
+}
+
+/* Carousel de jogadoras */
+.players-carousel {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 1rem;
+  will-change: transform;
+}
+
+.player-card {
+  flex: 0 0 calc(16.666% - 1rem);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  min-width: 0; /* Permite que o flex item encolha */
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+}
+
+.player-card:hover .player-image {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.player-card:hover .player-image::before {
+  background: linear-gradient(135deg, rgba(0, 100, 0, 0.2) 0%, rgba(34, 139, 34, 0.2) 100%);
+}
+
+.player-card:hover .player-info {
+  background: linear-gradient(135deg, #004d00 0%, #1e7e1e 100%);
+  transform: scale(1.02);
+}
+
+.player-image {
+  width: 100%;
+  height: 200px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/imgs/ChatGPT Image 16 de set. de 2025, 19_28_03.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.player-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 100, 0, 0.1) 0%, rgba(34, 139, 34, 0.1) 100%);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.player-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.player-info {
+  background: linear-gradient(135deg, #006400 0%, #228B22 100%);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.player-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.player-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Indicadores do carousel */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #dee2e6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #dc3545;
+  transform: scale(1.2);
+}
+
+/* ===== SEÇÃO TÍTULOS ===== */
+.titles-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.titles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.title-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.title-card:hover {
+  transform: translateY(-5px);
+}
+
+.title-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.title-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.title-year {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #006400;
+  margin-bottom: 1rem;
+}
+
+.title-description {
+  color: #6c757d;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== SEÇÃO SOBRE ===== */
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-text {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-text p {
+  color: #495057;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-stats {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-stats h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.stat-item .stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #006400;
+  margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Telas grandes */
+@media (min-width: 1400px) {
+  .player-card {
+    flex: 0 0 calc(14.285% - 0.86rem); /* 7 cards por linha */
+  }
+  
+  .player-image {
+    height: 220px;
+  }
+  
+  .players-carousel {
+    padding: 2.5rem;
+  }
+  
+  .elenco-title h2 {
+    font-size: 2.8rem;
+  }
+  
+  .carousel-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+  .player-card {
+    flex: 0 0 calc(20% - 0.8rem);
+  }
+  
+  .player-image {
+    height: 180px;
+  }
+  
+  .elenco-title h2 {
+    font-size: 2.2rem;
+  }
+  
+  .carousel-controls {
+    gap: 0.75rem;
+  }
+  
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-hero {
+    background-attachment: scroll;
+    padding: 2rem 0;
+  }
+  
+  .team-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .team-info h1 {
+    font-size: 2rem;
+  }
+
+  .team-stats {
+    justify-content: center;
+  }
+
+  .tabs-nav {
+    flex-direction: column;
+  }
+
+  .tab-btn {
+    border-bottom: none;
+    border-right: 3px solid transparent;
+  }
+
+  .tab-btn.active {
+    border-right-color: #006400;
+    border-bottom-color: transparent;
+  }
+
+  /* Melhorias no header do elenco */
+  .elenco-header {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .elenco-title {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .elenco-title h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .title-bar {
+    width: 60px;
+    height: 4px;
+    margin: 0 auto;
+  }
+
+  /* Carousel de jogadoras para tablets */
+  .players-carousel {
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .player-card {
+    flex: 0 0 calc(33.333% - 0.67rem);
+  }
+
+  .player-image {
+    height: 160px;
+  }
+
+  .player-name {
+    font-size: 0.85rem;
+  }
+
+  .player-number {
+    font-size: 1.1rem;
+  }
+
+  /* Controles do carousel */
+  .carousel-controls {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .carousel-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .titles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dispositivos móveis pequenos */
+@media (max-width: 480px) {
+  .team-hero {
+    padding: 1.5rem 0;
+    background-attachment: scroll;
+  }
+  
+  .team-info h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Header do elenco para mobile */
+  .elenco-header {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .elenco-title h2 {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  .title-bar {
+    width: 50px;
+    height: 3px;
+  }
+
+  /* Carousel para mobile */
+  .players-carousel {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+  }
+
+  .player-card {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+
+  .player-image {
+    height: 140px;
+    border-radius: 6px;
+  }
+
+  .player-info {
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .player-name {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .player-number {
+    font-size: 1rem;
+  }
+
+  /* Controles do carousel para mobile */
+  .carousel-controls {
+    width: 100%;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+  }
+
+  /* Indicadores para mobile */
+  .carousel-indicators {
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .team-content {
+    padding: 2rem 0;
+  }
+}
+
+/* Dispositivos móveis muito pequenos */
+@media (max-width: 360px) {
+  .player-card {
+    flex: 0 0 calc(100% - 0.5rem);
+  }
+
+  .player-image {
+    height: 180px;
+  }
+
+  .player-name {
+    font-size: 0.9rem;
+  }
+
+  .player-number {
+    font-size: 1.1rem;
+  }
+
+  .elenco-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ===== ACESSIBILIDADE E ESTADOS DE FOCO ===== */
+.carousel-btn:focus,
+.player-card:focus,
+.tab-btn:focus {
+  outline: 2px solid #006400;
+  outline-offset: 2px;
+}
+
+.carousel-btn:focus-visible,
+.player-card:focus-visible,
+.tab-btn:focus-visible {
+  outline: 2px solid #006400;
+  outline-offset: 2px;
+}
+
+/* Melhorias para usuários que preferem movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-container {
+    transition: none;
+  }
+  
+  .player-card,
+  .carousel-btn,
+  .player-image,
+  .player-info {
+    transition: none;
+  }
+  
+  .player-card:hover {
+    transform: none;
+  }
+  
+  .carousel-btn:hover {
+    transform: none;
+  }
+}
+
+/* Melhorias para modo escuro (se implementado no futuro) */
+@media (prefers-color-scheme: dark) {
+  .players-carousel {
+    background: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .player-info {
+    background: linear-gradient(135deg, #004d00 0%, #1e7e1e 100%);
+  }
+  
+  .carousel-btn {
+    background: #495057;
+  }
+  
+  .carousel-btn:hover {
+    background: #6c757d;
+  }
+}

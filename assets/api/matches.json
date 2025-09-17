@@ -1,0 +1,169 @@
+{
+  "updatedAt": "2025-09-11T12:00:00Z",
+  "matches": [
+    {
+      "id": "br_fem_001",
+      "league": "Brasileirão Feminino",
+      "stage": "Final",
+      "round": 2,
+      "status": "live",
+      "minute": 57,
+      "startTime": "2025-09-11T11:00:00Z",
+      "venue": "Neo Química Arena",
+      "broadcasters": [
+        "CBF TV",
+        "SporTV"
+      ],
+      "referee": "Ana Paula Oliveira",
+      "homeTeam": {
+        "name": "Corinthians",
+        "crestUrl": "assets/imgs/logo-corinthians-1024 (1).png"
+      },
+      "awayTeam": {
+        "name": "Cruzeiro",
+        "crestUrl": "assets/imgs/logo-cruzeiro-1024 (1).png"
+      },
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "lastEvent": {
+        "type": "goal",
+        "team": "Corinthians",
+        "minute": 52,
+        "player": "Amanda"
+      },
+      "timeline": [
+        {
+          "minute": 12,
+          "type": "goal",
+          "team": "Cruzeiro",
+          "player": "Yoreli"
+        },
+        {
+          "minute": 52,
+          "type": "goal",
+          "team": "Corinthians",
+          "player": "Amanda"
+        }
+      ],
+      "stats": {
+        "possession": {
+          "home": 58,
+          "away": 42
+        },
+        "shots": {
+          "home": 9,
+          "away": 6
+        },
+        "shotsOnTarget": {
+          "home": 4,
+          "away": 3
+        },
+        "corners": {
+          "home": 5,
+          "away": 2
+        },
+        "fouls": {
+          "home": 8,
+          "away": 10
+        }
+      }
+    },
+    {
+      "id": "br_fem_002",
+      "league": "Brasileirão Feminino",
+      "stage": "Semifinal",
+      "round": 1,
+      "status": "scheduled",
+      "minute": 0,
+      "startTime": "2025-09-11T19:30:00Z",
+      "venue": "Allianz Parque",
+      "broadcasters": [
+        "CBF TV"
+      ],
+      "referee": null,
+      "homeTeam": {
+        "name": "Palmeiras",
+        "crestUrl": "assets/imgs/logo-palmeiras-1024.png"
+      },
+      "awayTeam": {
+        "name": "São Paulo",
+        "crestUrl": "assets/imgs/logo-sao-paulo-1024.png"
+      },
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "lastEvent": null,
+      "timeline": [],
+      "stats": null
+    },
+    {
+      "id": "intl_fem_001",
+      "league": "Amistoso Internacional",
+      "stage": "Amistoso",
+      "round": null,
+      "status": "finished",
+      "minute": 90,
+      "startTime": "2025-09-10T22:00:00Z",
+      "venue": "Maracanã",
+      "broadcasters": [
+        "OpenTV"
+      ],
+      "referee": "Edina Alves",
+      "homeTeam": {
+        "name": "Brasil",
+        "crestUrl": "assets/imgs/logo-selecao-brasileira-brasil-novo-logo-2019-1024.png"
+      },
+      "awayTeam": {
+        "name": "Colômbia",
+        "crestUrl": "assets/imgs/selecao-colombiana-de-futebol-1024.png"
+      },
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "lastEvent": {
+        "type": "end",
+        "minute": 90
+      },
+      "timeline": [
+        {
+          "minute": 28,
+          "type": "goal",
+          "team": "Brasil",
+          "player": "Bia Zaneratto"
+        },
+        {
+          "minute": 73,
+          "type": "goal",
+          "team": "Brasil",
+          "player": "Gabi Nunes"
+        }
+      ],
+      "stats": {
+        "possession": {
+          "home": 61,
+          "away": 39
+        },
+        "shots": {
+          "home": 13,
+          "away": 5
+        },
+        "shotsOnTarget": {
+          "home": 6,
+          "away": 2
+        },
+        "corners": {
+          "home": 7,
+          "away": 1
+        },
+        "fouls": {
+          "home": 9,
+          "away": 14
+        }
+      }
+    }
+  ]
+}

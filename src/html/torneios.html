@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passa a Bola - Torneios</title>
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/torneios.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+
+      <div class="logo">
+        <a href="../../index.html" class="logo-link">
+          <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+        </a>
+      </div>
+
+      <div class="nav-menu">
+        <a href="./times.html" class="nav-link">Times</a>
+        <a href="./jogos.html" class="nav-link">Jogos</a>
+        <div class="dropdown-container">
+          <a href="./comunidade.html" class="nav-link dropdown-trigger">Comunidade</a>
+          <div class="dropdown-menu">
+            <a href="./comunidade.html" class="dropdown-item">Comunidade</a>
+            <a href="./torneios.html" class="dropdown-item active">Torneios</a>
+            <a href="./quadras.html" class="dropdown-item">Quadras</a>
+            <a href="./loja.html" class="dropdown-item">Loja</a>
+          </div>
+        </div>
+        <a href="./noticias.html" class="nav-link">Notícias</a>
+      </div>
+
+      <div class="header-actions">
+        <div class="search-container">
+          <div class="search-box" id="searchBox">
+            <input type="text" placeholder="Buscar..." id="searchInput">
+            <button class="search-btn" id="searchBtn" aria-label="Buscar">
+              <svg width="20" height="20" viewBox="0 0 512 512" fill="currentColor">
+                <path
+                  d="M456.69 421.39 362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3zM97.92 222.72a124.8 124.8 0 1 1 124.8 124.8 124.95 124.95 0 0 1-124.8-124.8z">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="login-container">
+          <a href="./login.html" class="login-btn" id="loginBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+            <span class="login-text">Login</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="sidebar-menu" id="sidebarMenu">
+      <div class="sidebar-header">
+        <h3>Menu</h3>
+        <button class="close-btn" id="closeMenu">✕</button>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="./times.html">Times</a></li>
+        <li><a href="./jogos.html">Jogos</a></li>
+        <li class="dropdown-mobile">
+          <a href="./comunidade.html" class="dropdown-mobile-trigger">Comunidade</a>
+          <ul class="dropdown-mobile-menu">
+            <li><a href="./comunidade.html">Comunidade</a></li>
+            <li><a href="./torneios.html">Torneios</a></li>
+            <li><a href="./quadras.html">Quadras</a></li>
+            <li><a href="./loja.html">Loja</a></li>
+          </ul>
+        </li>
+        <li><a href="./noticias.html">Notícias</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  </header>
+
+  <div class="fixed-logo" id="fixedLogo" aria-hidden="true">
+    <a href="../../index.html" class="fixed-logo-link">
+      <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+    </a>
+  </div>
+
+  <main class="tournaments-page">
+    <section class="tournaments-hero">
+      <div class="container">
+        <div class="hero-row">
+          <div class="hero-copy">
+            <h1>Torneios e Chaveamentos</h1>
+            <p>Crie torneios, monte escalações, acompanhe placares e chaveamentos.</p>
+            <div class="hero-actions">
+              <button id="newTournamentBtn" class="primary-btn">Novo Torneio</button>
+              <button id="importBtn" class="ghost-btn">Importar</button>
+              <button id="exportBtn" class="ghost-btn">Exportar</button>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-num" id="statTournaments">0</div>
+              <div class="stat-label">Torneios</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num" id="statTeams">0</div>
+              <div class="stat-label">Equipes</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num" id="statMatches">0</div>
+              <div class="stat-label">Partidas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tournaments-section">
+      <div class="container">
+        <div class="layout">
+          <aside class="sidebar">
+            <div class="sidebar-header-row">
+              <h2>Meus Torneios</h2>
+              <button id="clearAllBtn" class="text-btn" title="Limpar tudo">Limpar</button>
+            </div>
+            <ul id="tournamentsList" class="tournaments-list"></ul>
+            <div class="sidebar-footer">
+              <div class="hint">Dica: Exporte seus dados periodicamente.</div>
+            </div>
+          </aside>
+
+          <section class="content">
+            <div id="emptyState" class="empty-state">
+              <div class="empty-emoji">🏆</div>
+              <h3>Nenhum torneio selecionado</h3>
+              <p>Crie um novo torneio ou selecione um existente para começar.</p>
+              <button id="emptyNewBtn" class="primary-btn">Criar torneio</button>
+            </div>
+
+            <div id="tournamentView" class="tournament-view hidden">
+              <div class="tournament-header">
+                <div class="title-wrap">
+                  <div class="badge-lg">🏆 Torneio</div>
+                  <input id="tournamentName" class="title-input" placeholder="Nome do torneio" />
+                </div>
+                <div class="header-actions-row">
+                  <select id="tournamentType">
+                    <option value="single">Eliminação simples</option>
+                    <option value="double">Eliminação dupla</option>
+                    <option value="league">Pontos corridos</option>
+                  </select>
+                  <button id="addTeamBtn" class="secondary-btn">Adicionar Equipe</button>
+                  <button id="generateBracketBtn" class="primary-btn"> Chaveamento</button>
+                </div>
+              </div>
+
+              <div class="panes">
+                <div class="pane squads-pane">
+                  <h4>Equipes</h4>
+                  <ul id="teamsList" class="teams-list"></ul>
+                </div>
+
+                <div class="pane bracket-pane">
+                  <h4>Chaveamento</h4>
+                  <div id="bracket" class="bracket"></div>
+                </div>
+
+                <div class="pane matches-pane">
+                  <h4>Jogos</h4>
+                  <div id="matches" class="matches"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <input id="importInput" type="file" accept="application/json" hidden>
+  <div id="toaster" class="toaster" aria-live="polite"></div>
+
+  <script src="../../script.js" defer></script>
+  <script src="../js/torneios.js" defer></script>
+</body>
+
+</html>

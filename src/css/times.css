@@ -1,0 +1,400 @@
+:root {
+    --primary-color: #9a2bb3;
+    --secondary-color: #781e96;
+    --accent-color: #0d2238;
+    --text-color: #12263a;
+    --muted-color: #6b7280;
+    --card-bg: #ffffff;
+    --card-border: #e5e7eb;
+    --hover-bg: #f8fafc;
+    --shadow: rgba(17, 24, 39, 0.08);
+    --shadow-hover: rgba(17, 24, 39, 0.12);
+}
+
+body {
+    background: #f6f8fb;
+    color: var(--text-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.times-page {
+    margin-top: 86px;
+}
+
+/* Hero Section */
+.times-hero {
+    background: linear-gradient(135deg, rgba(153, 42, 187, 0.8) 0%, rgba(120, 30, 150, 0.8) 60%, rgba(13, 34, 56, 0.8) 100%), 
+                url('../../assets/imgs/ChatGPT Image 16 de set. de 2025, 19_28_03.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 36px 0;
+    text-align: center;
+    position: relative;
+}
+
+.times-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.times-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.times-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.times-hero p {
+    opacity: 0.9;
+    margin-bottom: 32px;
+    font-size: 1.1rem;
+}
+
+/* Tabs Navigation */
+.tabs-container {
+    margin-top: 24px;
+}
+
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 6px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.tab-btn.active {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tab-icon {
+    font-size: 1.2rem;
+}
+
+/* Times Section */
+.times-section {
+    padding: 48px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.league-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.league-title h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.league-title p {
+    color: var(--muted-color);
+    font-size: 1.1rem;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Teams Grid */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+/* Team Card */
+.team-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.team-card:hover::before {
+    left: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.team-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--hover-bg);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card:hover .team-logo {
+    background: linear-gradient(135deg, rgba(153, 42, 187, 0.1), rgba(120, 30, 150, 0.1));
+    transform: scale(1.05);
+}
+
+.team-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.team-card:hover .team-logo img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.team-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.team-card:hover .team-name {
+    color: var(--primary-color);
+}
+
+.team-info {
+    font-size: 0.9rem;
+    color: var(--muted-color);
+    line-height: 1.4;
+}
+
+/* Coming Soon */
+.coming-soon {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--card-bg);
+    border: 2px dashed var(--card-border);
+    border-radius: 16px;
+    color: var(--muted-color);
+}
+
+.coming-soon-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.coming-soon h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .times-hero {
+        background-attachment: scroll;
+        padding: 30px 0;
+    }
+    
+    .times-hero h1 {
+        font-size: 2rem;
+    }
+
+    .tabs-nav {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .tab-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .teams-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 16px;
+    }
+
+    .team-card {
+        padding: 20px;
+    }
+
+    .team-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .team-logo img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .times-hero {
+        padding: 24px 0;
+        background-attachment: scroll;
+    }
+
+    .times-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .league-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .teams-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .team-card {
+        padding: 16px;
+    }
+
+    .team-name {
+        font-size: 1rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--card-border);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Focus States for Accessibility */
+.tab-btn:focus,
+.team-card:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .team-card,
+    .tab-btn,
+    .team-logo,
+    .team-logo img,
+    .team-name {
+        transition: none;
+    }
+
+    .team-card::before {
+        display: none;
+    }
+
+    .tab-content {
+        animation: none;
+    }
+}

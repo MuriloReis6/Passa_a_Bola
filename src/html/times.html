@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passa a Bola - Times</title>
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/times.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <!-- Menu Hambúrguer (apenas mobile) -->
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+
+      <!-- Logo Centralizada -->
+      <div class="logo">
+        <a href="../../index.html" class="logo-link">
+          <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+        </a>
+      </div>
+
+      <!-- Menu de Navegação (apenas desktop) -->
+      <div class="nav-menu">
+        <a href="./times.html" class="nav-link active">Times</a>
+        <a href="./jogos.html" class="nav-link">Jogos</a>
+        <div class="dropdown-container">
+          <a href="./comunidade.html" class="nav-link dropdown-trigger">Comunidade</a>
+          <div class="dropdown-menu">
+            <a href="./comunidade.html" class="dropdown-item">Comunidade</a>
+            <a href="./torneios.html" class="dropdown-item">Torneios</a>
+            <a href="./quadras.html" class="dropdown-item">Quadras</a>
+            <a href="./loja.html" class="dropdown-item">Loja</a>
+          </div>
+        </div>
+        <a href="./noticias.html" class="nav-link">Notícias</a>
+      </div>
+
+      <!-- Barra de Busca e Login -->
+      <div class="header-actions">
+        <!-- Barra de Busca -->
+        <div class="search-container">
+          <div class="search-box" id="searchBox">
+            <input type="text" placeholder="Buscar..." id="searchInput">
+            <button class="search-btn" id="searchBtn">
+              <svg width="20" height="20" viewBox="0 0 512 512" fill="currentColor">
+                <path
+                  d="M456.69 421.39 362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3zM97.92 222.72a124.8 124.8 0 1 1 124.8 124.8 124.95 124.95 0 0 1-124.8-124.8z">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Botão de Login -->
+        <div class="login-container">
+          <a href="./login.html" class="login-btn" id="loginBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+            <span class="login-text">Login</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Menu Lateral -->
+    <div class="sidebar-menu" id="sidebarMenu">
+      <div class="sidebar-header">
+        <h3>Menu</h3>
+        <button class="close-btn" id="closeMenu">✕</button>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="./times.html">Times</a></li>
+        <li><a href="./jogos.html">Jogos</a></li>
+        <li class="dropdown-mobile">
+          <a href="./comunidade.html" class="dropdown-mobile-trigger">Comunidade</a>
+          <ul class="dropdown-mobile-menu">
+            <li><a href="./comunidade.html">Comunidade</a></li>
+            <li><a href="./torneios.html">Torneios</a></li>
+            <li><a href="./quadras.html">Quadras</a></li>
+            <li><a href="./loja.html">Loja</a></li>
+          </ul>
+        </li>
+        <li><a href="./noticias.html">Notícias</a></li>
+      </ul>
+    </div>
+
+    <!-- Overlay para fechar menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  </header>
+
+  <div class="fixed-logo" id="fixedLogo" aria-hidden="true">
+    <a href="../../index.html" class="fixed-logo-link">
+      <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+    </a>
+  </div>
+
+  <main class="times-page">
+    <section class="times-hero">
+      <div class="container">
+        <h1>Times de Futebol</h1>
+        <p>Explore os times do futebol brasileiro e internacional</p>
+
+        <!-- Abas de navegação -->
+        <div class="tabs-container">
+          <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="brasil">
+              <span class="tab-icon">🇧🇷</span>
+              Brasil
+            </button>
+            <button class="tab-btn" data-tab="internacional">
+              <span class="tab-icon">🌍</span>
+              Internacional
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="times-section">
+      <div class="container">
+        <!-- Aba Brasil -->
+        <div class="tab-content active" id="brasil-content">
+          <div class="league-title">
+            <h2>Série A</h2>
+            <p>Campeonato Brasileiro de Futebol Feminino</p>
+          </div>
+
+          <div class="teams-grid" id="brasil-teams">
+            <!-- Times da Série A serão carregados via JavaScript -->
+          </div>
+        </div>
+
+        <!-- Aba Internacional -->
+        <div class="tab-content" id="internacional-content">
+          <div class="league-title">
+            <h2>Times Internacionais</h2>
+            <p>Principais clubes do futebol feminino mundial</p>
+          </div>
+
+          <div class="teams-grid" id="internacional-teams">
+            <!-- Times internacionais serão adicionados futuramente -->
+            <div class="coming-soon">
+              <div class="coming-soon-icon">🚧</div>
+              <h3>Em Breve</h3>
+              <p>Times internacionais serão adicionados em breve!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../script.js" defer></script>
+  <script src="../js/times.js" defer></script>
+</body>
+
+</html>

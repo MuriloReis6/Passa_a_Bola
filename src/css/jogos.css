@@ -1,0 +1,862 @@
+/* Variáveis CSS */
+:root {
+  --cbf-blue: rgb(153, 42, 187);
+  --cbf-yellow: #6bca3f;
+  --cbf-green: #0b6b3a;
+  --cbf-dark: rgb(120, 30, 150);
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+
+  /* Cores específicas para jogos */
+  --primary-bg: var(--white);
+  --secondary-bg: var(--gray-50);
+  --card-bg: var(--white);
+  --card-border: var(--gray-200);
+  --text: var(--gray-800);
+  --text-light: var(--gray-800);
+  --text-muted: var(--gray-500);
+  --muted: var(--gray-400);
+  --accent: var(--cbf-blue);
+  --live-color: var(--error);
+  --scheduled-color: var(--warning);
+  --finished-color: var(--success);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+  --time-bg: var(--cbf-blue);
+  --time-border: var(--cbf-dark);
+  --container-max-width: 1200px;
+}
+
+/* Reset e Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--primary-bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles - Removidos pois são herdados do home.css */
+
+/* Main Content */
+.matches-page {
+  margin-top: 76px;
+  min-height: calc(100vh - 76px);
+}
+
+/* Seção de Favoritos */
+.favorites-section {
+  background: linear-gradient(135deg, var(--cbf-blue) 0%, var(--cbf-dark) 100%);
+  padding: 40px 0;
+  border-bottom: 1px solid var(--cbf-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.favorites-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.01)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.01)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.01)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--white), var(--cbf-yellow));
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.favorite-match {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.favorite-match::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cbf-blue), var(--cbf-dark));
+  border-radius: 20px 20px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.favorite-match:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--cbf-blue);
+}
+
+.favorite-match:hover::before {
+  opacity: 1;
+}
+
+.favorite-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.favorite-team img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.favorite-match:hover .favorite-team img {
+  transform: scale(1.15);
+  border-color: var(--cbf-blue);
+  box-shadow: 0 0 20px rgba(153, 42, 187, 0.3);
+}
+
+.favorite-team-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--gray-800);
+  margin-top: 8px;
+}
+
+.favorite-score {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--gray-800);
+  margin: 0 24px;
+  text-align: center;
+  min-width: 100px;
+  letter-spacing: 2px;
+}
+
+.favorite-time {
+  background: linear-gradient(135deg, var(--cbf-blue), var(--cbf-dark));
+  border: 1px solid var(--cbf-dark);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  min-width: 60px;
+  box-shadow: 0 4px 12px rgba(153, 42, 187, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.favorite-players {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+/* Hero Section */
+.matches-hero {
+  background: linear-gradient(135deg, var(--cbf-blue) 0%, var(--cbf-dark) 100%);
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--cbf-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.matches-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain2" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.01)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.01)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.01)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain2)"/></svg>');
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.matches-hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.matches-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.filters select {
+  background: var(--secondary-bg);
+  color: var(--text-light);
+  border: 1px solid var(--card-border);
+  padding: 14px 20px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 180px;
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.filters select:hover {
+  background: var(--card-bg);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.filters select:focus {
+  outline: none;
+  background: var(--card-bg);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(153, 42, 187, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Seção de Jogos */
+.matches-section {
+  padding: 50px 0 80px;
+  background: var(--primary-bg);
+  position: relative;
+}
+
+.matches-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain3" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.01)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.01)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.005)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.005)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.005)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain3)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards de Jogos */
+.match-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 24px;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.match-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--live-color));
+  border-radius: 20px 20px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+.match-card:hover::before {
+  opacity: 1;
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.match-league {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.live {
+  background: var(--live-color);
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.badge.scheduled {
+  background: var(--scheduled-color);
+  color: white;
+}
+
+.badge.finished {
+  background: var(--finished-color);
+  color: white;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.live-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.live-bar-inner {
+  height: 100%;
+  background: linear-gradient(90deg, var(--live-color), var(--accent));
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.match-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.team img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.match-row:hover .team img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+.team-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-light);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.score {
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--text-light);
+  letter-spacing: 2px;
+  text-align: center;
+  min-width: 100px;
+  position: relative;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, var(--text-light) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.meta {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.last-event {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: rgba(153, 42, 187, 0.1);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-align: center;
+  border-left: 3px solid var(--accent);
+}
+
+.last-update {
+  margin-top: 40px;
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 20px;
+  background: var(--secondary-bg);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Loading States */
+.loading-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 12px;
+  }
+
+  .search-box {
+    min-width: 150px;
+  }
+
+  .login-text {
+    display: none;
+  }
+
+  .matches-hero h1 {
+    font-size: 2rem;
+  }
+
+  .matches-hero p {
+    font-size: 1rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filters select {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .favorite-match {
+    padding: 16px;
+  }
+
+  .favorite-score {
+    font-size: 1.6rem;
+    margin: 0 16px;
+  }
+
+  .score {
+    font-size: 1.5rem;
+  }
+
+  .team img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .match-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 0 16px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .matches-hero {
+    padding: 30px 0;
+  }
+
+  .matches-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .favorite-match {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .favorite-score {
+    margin: 0;
+    order: -1;
+  }
+
+  .favorite-team img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .team img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .score {
+    font-size: 1.3rem;
+  }
+
+  .match-card {
+    padding: 14px;
+  }
+}
+
+/* Acessibilidade */
+.match-card:focus-within,
+.favorite-match:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Animações suaves */
+.match-card,
+.favorite-match {
+  will-change: transform;
+}
+
+/* Estados de hover melhorados */
+.team-name:hover {
+  color: var(--accent);
+}
+
+/* Melhorias visuais */
+.favorite-match::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--live-color));
+  border-radius: 20px 20px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.favorite-match:hover::before {
+  opacity: 1;
+}
+
+/* Efeitos de partículas flutuantes */
+.matches-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="particles" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(153,42,187,0.1)"/><circle cx="80" cy="40" r="0.5" fill="rgba(16,185,129,0.1)"/><circle cx="40" cy="80" r="0.8" fill="rgba(239,68,68,0.1)"/><circle cx="60" cy="10" r="0.3" fill="rgba(59,130,246,0.1)"/><circle cx="10" cy="60" r="0.6" fill="rgba(153,42,187,0.1)"/><circle cx="90" cy="80" r="0.4" fill="rgba(16,185,129,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23particles)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+/* Melhorias nos badges */
+.badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.badge:hover::before {
+  left: 100%;
+}
+
+/* Efeito de brilho nos cards */
+.match-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.match-card:hover::after {
+  left: 100%;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(153, 42, 187, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(153, 42, 187, 0.6);
+  }
+}
+
+/* Efeitos de hover aprimorados */
+.favorite-match:hover,
+.match-card:hover {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Melhorias nos estados de loading */
+.loading-spinner {
+  position: relative;
+}
+
+.loading-spinner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Estilos para elementos com ícones */
+.section-title-icon {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.hero-title-icon {
+  display: inline-block;
+  margin-right: 16px;
+  animation: bounce 2s infinite;
+}
+
+/* Estados de animação para elementos dinâmicos */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.bounce-icon {
+  animation: bounce 2s infinite;
+}

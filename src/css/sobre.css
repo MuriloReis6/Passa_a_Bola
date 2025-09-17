@@ -1,0 +1,60 @@
+/* Sobre Page Styles - Minimalista */
+.sobre-page {
+  margin-top: 86px;
+  min-height: calc(100vh - 86px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+}
+
+.sobre-image-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre-image-container img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 126px);
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sobre-page {
+    margin-top: 66px;
+    min-height: calc(100vh - 66px);
+  }
+  
+  .sobre-image-container {
+    padding: 15px;
+  }
+  
+  .sobre-image-container img {
+    max-height: calc(100vh - 96px);
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-page {
+    margin-top: 61px;
+    min-height: calc(100vh - 61px);
+  }
+  
+  .sobre-image-container {
+    padding: 10px;
+  }
+  
+  .sobre-image-container img {
+    max-height: calc(100vh - 81px);
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Passa a Bola</title>
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <!-- Menu Hambúrguer (apenas mobile) -->
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+
+      <!-- Logo Centralizada -->
+      <div class="logo">
+        <a href="../../index.html" class="logo-link">
+          <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+        </a>
+      </div>
+
+      <!-- Menu de Navegação (apenas desktop) -->
+      <div class="nav-menu">
+        <a href="./times.html" class="nav-link">Times</a>
+        <a href="./jogos.html" class="nav-link">Jogos</a>
+        <div class="dropdown-container">
+          <a href="./comunidade.html" class="nav-link dropdown-trigger">Comunidade</a>
+          <div class="dropdown-menu">
+            <a href="./comunidade.html" class="dropdown-item">Comunidade</a>
+            <a href="./torneios.html" class="dropdown-item">Torneios</a>
+            <a href="./quadras.html" class="dropdown-item">Quadras</a>
+            <a href="./loja.html" class="dropdown-item">Loja</a>
+          </div>
+        </div>
+        <a href="./noticias.html" class="nav-link">Notícias</a>
+      </div>
+
+      <!-- Barra de Busca e Login -->
+      <div class="header-actions">
+        <!-- Barra de Busca -->
+        <div class="search-container">
+          <div class="search-box" id="searchBox">
+            <input type="text" placeholder="Buscar..." id="searchInput">
+            <button class="search-btn" id="searchBtn">
+              <svg width="20" height="20" viewBox="0 0 512 512" fill="currentColor">
+                <path
+                  d="M456.69 421.39 362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3zM97.92 222.72a124.8 124.8 0 1 1 124.8 124.8 124.95 124.95 0 0 1-124.8-124.8z">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Botão de Login -->
+        <div class="login-container">
+          <button class="login-btn active" id="loginBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+            <span class="login-text">Login</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Menu Lateral -->
+    <div class="sidebar-menu" id="sidebarMenu">
+      <div class="sidebar-header">
+        <h3>Menu</h3>
+        <button class="close-btn" id="closeMenu">✕</button>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="./times.html">Times</a></li>
+        <li><a href="./jogos.html">Jogos</a></li>
+        <li class="dropdown-mobile">
+          <a href="./comunidade.html" class="dropdown-mobile-trigger">Comunidade</a>
+          <ul class="dropdown-mobile-menu">
+            <li><a href="./comunidade.html">Comunidade</a></li>
+            <li><a href="./torneios.html">Torneios</a></li>
+            <li><a href="./quadras.html">Quadras</a></li>
+            <li><a href="./loja.html">Loja</a></li>
+          </ul>
+        </li>
+        <li><a href="./noticias.html">Notícias</a></li>
+        <li class="sidebar-login">
+          <button class="sidebar-login-btn active" id="sidebarLoginBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+            Login
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Overlay para fechar menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  </header>
+
+  <!-- Logo fixa que aparece ao rolar -->
+  <div class="fixed-logo" id="fixedLogo" aria-hidden="true">
+    <a href="../../index.html" class="fixed-logo-link">
+      <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+    </a>
+  </div>
+
+  <!-- Main Content -->
+  <main class="login-main">
+    <div class="login-container">
+      <div class="login-card">
+        <!-- Header do Card -->
+        <div class="login-header">
+          <div class="login-logo">
+            <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+          </div>
+          <h1>Seja Bem-vindo!</h1>
+          <p>Entre na sua conta para acompanhar o futebol feminino</p>
+        </div>
+
+        <!-- Formulário de Login -->
+        <form class="login-form" id="loginForm">
+          <!-- Campo hidden para tipo de usuário -->
+          <input type="hidden" id="userType" name="userType" value="">
+
+          <!-- Seleção de Tipo de Usuário -->
+          <div class="form-group">
+            <label>Você é:</label>
+            <div class="user-type-selector">
+              <button type="button" class="user-type-btn" data-type="jogador">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 6.5V7.5C15 8.3 14.3 9 13.5 9H10.5C9.7 9 9 8.3 9 7.5V6.5L3 7V9L9 8.5V9.5C9 10.3 9.7 11 10.5 11H13.5C14.3 11 15 10.3 15 9.5V8.5L21 9ZM7 12C5.9 12 5 12.9 5 14V16C5 17.1 5.9 18 7 18H9V20C9 21.1 9.9 22 11 22H13C14.1 22 15 21.1 15 20V18H17C18.1 18 19 17.1 19 16V14C19 12.9 18.1 12 17 12H7Z" />
+                </svg>
+                <span>Jogador</span>
+              </button>
+              <button type="button" class="user-type-btn" data-type="olheiro">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 6.5V7.5C15 8.3 14.3 9 13.5 9H10.5C9.7 9 9 8.3 9 7.5V6.5L3 7V9L9 8.5V9.5C9 10.3 9.7 11 10.5 11H13.5C14.3 11 15 10.3 15 9.5V8.5L21 9ZM7 12C5.9 12 5 12.9 5 14V16C5 17.1 5.9 18 7 18H9V20C9 21.1 9.9 22 11 22H13C14.1 22 15 21.1 15 20V18H17C18.1 18 19 17.1 19 16V14C19 12.9 18.1 12 17 12H7Z" />
+                </svg>
+                <span>Olheiro</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <div class="input-container">
+              <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <div class="input-container">
+              <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+              </svg>
+              <input type="password" id="password" name="password" placeholder="Sua senha" required>
+              <button type="button" class="password-toggle" id="passwordToggle">
+                <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label class="checkbox-container">
+              <input type="checkbox" id="rememberMe" name="rememberMe">
+              <span class="checkmark"></span>
+              Lembrar de mim
+            </label>
+            <a href="#forgot-password" class="forgot-password">Esqueci minha senha</a>
+          </div>
+
+          <button type="submit" class="login-submit-btn">
+            <span class="btn-text">Entrar</span>
+            <div class="btn-loading" style="display: none;">
+              <div class="spinner"></div>
+            </div>
+          </button>
+        </form>
+
+        <!-- Divisor -->
+        <div class="divider">
+          <span>ou</span>
+        </div>
+
+        <!-- Login Social -->
+        <div class="social-login">
+          <button class="social-btn google-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+            Continuar com Google
+          </button>
+
+          <button class="social-btn facebook-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+            Continuar com Facebook
+          </button>
+        </div>
+
+        <!-- Link para Cadastro -->
+        <div class="signup-link">
+          <p>Não tem uma conta? <a href="#cadastro">Cadastre-se aqui</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="login-footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Passa a Bola. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="#termos">Termos de Uso</a>
+        <a href="#privacidade">Política de Privacidade</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/login.js" defer></script>
+</body>
+
+</html>

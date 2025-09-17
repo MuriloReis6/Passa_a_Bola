@@ -1,0 +1,104 @@
+/* fallback: esconder qualquer badge flutuante desconhecida */
+.force-hidden{display:none !important;visibility:hidden !important;opacity:0 !important}
+:root{--card:#fff;--muted:#6b7280;--ink:#12263a;--line:#e5e7eb;--bg:#f6f8fb}
+body{background:var(--bg);color:var(--ink)}
+.tournaments-page{margin-top:86px}
+.tournaments-hero{background:linear-gradient(135deg, rgba(153,42,187,1) 0%, rgba(120,30,150,1) 60%, rgba(13,34,56,1) 100%), url('../../assets/imgs/mercado-livre-arena-pacaembu.jpg.png') center/cover no-repeat;position:relative;color:#fff;padding:36px 0}
+.tournaments-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.35));}
+.tournaments-hero .container{position:relative;z-index:1}
+.tournaments-hero h1{font-size:2rem;margin-bottom:6px}
+.tournaments-hero p{opacity:.95;margin-bottom:16px}
+.hero-row{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:10px}
+.stat-card{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px);border-radius:12px;padding:12px 16px;text-align:center;min-width:120px}
+.stat-num{font-size:22px;font-weight:800}
+.stat-label{font-size:12px;opacity:.9}
+.primary-btn,.secondary-btn,.ghost-btn,.text-btn{border:1px solid transparent;border-radius:10px;padding:10px 14px;cursor:pointer;transition:all .2s ease;font-weight:600}
+.primary-btn{background:var(--cbf-yellow);color:var(--cbf-blue)}
+.primary-btn:hover{transform:translateY(-1px)}
+.secondary-btn{background:#eef2ff;color:#1d4ed8;border-color:#e0e7ff}
+.ghost-btn{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px)}
+.text-btn{background:transparent;color:#fff;padding:6px 8px}
+
+.tournaments-section{padding:24px 0 40px}
+.layout{display:grid;grid-template-columns:280px 1fr;gap:20px}
+@media(max-width: 960px){.layout{grid-template-columns:1fr}}
+
+.sidebar{background:linear-gradient(180deg,#ffffff 0%,#fafbff 100%);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 12px 30px rgba(17,24,39,.08)}
+.sidebar-header-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.tournaments-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.tournament-item{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;cursor:pointer}
+.tournament-item:hover{background:#f9fafb}
+.tournament-item .name{font-weight:700}
+.tournament-item .meta{font-size:12px;color:#64748b}
+.sidebar-footer{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:12px;color:#64748b}
+.hint{opacity:.9}
+
+.content{min-height:400px}
+.empty-state{display:grid;place-items:center;text-align:center;background:linear-gradient(180deg,#ffffff 0%,#fafbff 100%);border:1px dashed var(--line);border-radius:14px;padding:40px;color:var(--muted)}
+.empty-emoji{font-size:42px;margin-bottom:10px}
+.hidden{display:none}
+
+.tournament-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.title-wrap{display:flex;align-items:center;gap:10px;flex:1}
+.badge-lg{background:#eef2ff;color:#1d4ed8;border:1px solid #e0e7ff;border-radius:999px;padding:6px 10px;font-weight:700}
+.title-input{flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:20px;font-weight:900;color:var(--cbf-blue)}
+.header-actions-row{display:flex;gap:10px}
+.header-actions-row select{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+
+.panes{display:grid;grid-template-columns:320px 1fr;grid-template-areas:"squads matches" "bracket bracket";gap:16px;align-items:start}
+@media(max-width: 1200px){.panes{grid-template-columns:1fr;grid-template-areas:"squads" "matches" "bracket"}}
+.pane{background:linear-gradient(180deg,#ffffff 0%,#fafbff 100%);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 12px 30px rgba(17,24,39,.08)}
+.pane h4{margin-bottom:10px;color:var(--cbf-dark)}
+
+/* Teams */
+.teams-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.team-row{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:8px;background:#fff}
+.team-color{width:14px;height:14px;border-radius:50%}
+.team-name{flex:1;font-weight:700}
+.team-actions button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 8px;cursor:pointer}
+.add-team-form{display:flex;gap:8px;margin-top:8px}
+.add-team-form input{flex:1;border:1px solid var(--line);border-radius:8px;padding:8px}
+
+/* Bracket */
+.squads-pane{grid-area:squads}
+.matches-pane{grid-area:matches}
+.bracket-pane{grid-area:bracket;min-height:380px;max-height:460px}
+.bracket{display:grid;grid-auto-flow:column;gap:32px;overflow:auto;padding:16px;position:relative;max-width:100%;min-height:360px;max-height:420px}
+.bracket::before{content:'';position:absolute;top:0;bottom:0;left:0;right:0;pointer-events:none;background:linear-gradient(90deg, rgba(246,248,251,1), rgba(246,248,251,0));mask-image:linear-gradient(90deg,#000 0 20px,transparent 60px calc(100% - 60px),#000 calc(100% - 20px))}
+.round{display:flex;flex-direction:column;gap:14px;min-width:280px}
+.round::after{content:attr(data-round);text-transform:uppercase;font-size:11px;color:#64748b;margin-top:2px}
+.match{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 12px 28px rgba(17,24,39,.08)}
+.match .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.match .team{display:flex;align-items:center;gap:6px}
+.match .score{width:56px;text-align:center;border:1px solid var(--line);border-radius:10px;padding:8px 6px;font-weight:700}
+.match .status{font-size:12px;color:#64748b;margin-top:6px}
+
+/* connectors (simple visual) */
+.round + .round{position:relative}
+.round + .round .match{position:relative}
+.round + .round .match::before{content:'';position:absolute;left:-12px;top:50%;width:12px;height:1px;background:#e5e7eb}
+.round .match + .match::after{content:'';position:absolute;left:0;right:0;top:-6px;height:1px;background:transparent}
+
+/* Matches list */
+.matches{display:flex;flex-direction:column;gap:10px}
+.match-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;box-shadow:0 8px 22px rgba(17,24,39,.06)}
+.match-item .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.badge{padding:4px 10px;border-radius:999px;font-size:11px;border:1px solid transparent}
+.badge.scheduled{background:#dbeafe;color:#1d4ed8;border:1px solid #bfdbfe}
+.badge.live{background:#fee2e2;color:#b91c1c;border:1px solid #fecaca}
+.badge.finished{background:#dcfce7;color:#166534;border:1px solid #bbf7d0}
+
+/* Teams visuals */
+.avatar{width:24px;height:24px;border-radius:50%;display:inline-block;border:2px solid #fff;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.team-row{position:relative}
+.team-row::after{content:'';position:absolute;inset:0;border-radius:10px;box-shadow:0 8px 22px rgba(17,24,39,.04);pointer-events:none}
+
+/* Toaster */
+.toaster{display:none}
+.toast{background:#0d2238;color:#fff;border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;transform:translateY(8px);animation:toast-in .25s ease forwards}
+.toast.success{background:linear-gradient(135deg, #0b6b3a, #0d2238)}
+.toast.error{background:linear-gradient(135deg, #b91c1c, #0d2238)}
+@keyframes toast-in{to{opacity:1;transform:translateY(0)}}
+

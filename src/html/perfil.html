@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Passa a Bola</title>
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/perfil.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <!-- Menu Hambúrguer (apenas mobile) -->
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+
+      <!-- Logo Centralizada -->
+      <div class="logo">
+        <a href="../../index.html" class="logo-link">
+          <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+        </a>
+      </div>
+
+      <!-- Menu de Navegação (apenas desktop) -->
+      <div class="nav-menu">
+        <a href="./times.html" class="nav-link">Times</a>
+        <a href="./jogos.html" class="nav-link">Jogos</a>
+        <div class="dropdown-container">
+          <a href="./comunidade.html" class="nav-link dropdown-trigger">Comunidade</a>
+          <div class="dropdown-menu">
+            <a href="./comunidade.html" class="dropdown-item">Comunidade</a>
+            <a href="./torneios.html" class="dropdown-item">Torneios</a>
+            <a href="./quadras.html" class="dropdown-item">Quadras</a>
+            <a href="./loja.html" class="dropdown-item">Loja</a>
+          </div>
+        </div>
+        <a href="./noticias.html" class="nav-link">Notícias</a>
+      </div>
+
+      <!-- Barra de Busca e Perfil -->
+      <div class="header-actions">
+        <!-- Barra de Busca -->
+        <div class="search-container">
+          <div class="search-box" id="searchBox">
+            <input type="text" placeholder="Buscar..." id="searchInput">
+            <button class="search-btn" id="searchBtn">
+              <svg width="20" height="20" viewBox="0 0 512 512" fill="currentColor">
+                <path
+                  d="M456.69 421.39 362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3zM97.92 222.72a124.8 124.8 0 1 1 124.8 124.8 124.95 124.95 0 0 1-124.8-124.8z">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Botão de Perfil -->
+        <div class="profile-container">
+          <div class="profile-dropdown" id="profileDropdown">
+            <button class="profile-btn" id="profileBtn">
+              <div class="profile-avatar">
+                <img src="../../assets/imgs/AMANDA-11.png" alt="Perfil" id="profileAvatar">
+              </div>
+              <span class="profile-name" id="profileName">Amanda</span>
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </button>
+            <div class="profile-menu" id="profileMenu">
+              <a href="perfil.html" class="profile-menu-item active">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+                Meu Perfil
+              </a>
+              <a href="jogos.html" class="profile-menu-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Meus Jogos
+              </a>
+              <a href="torneios.html" class="profile-menu-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z" />
+                </svg>
+                Meus Torneios
+              </a>
+              <div class="profile-menu-divider"></div>
+              <a href="#" class="profile-menu-item logout" id="logoutBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" />
+                </svg>
+                Sair
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Menu Lateral -->
+    <div class="sidebar-menu" id="sidebarMenu">
+      <div class="sidebar-header">
+        <h3>Menu</h3>
+        <button class="close-btn" id="closeMenu">✕</button>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="times.html">Times</a></li>
+        <li><a href="jogos.html">Jogos</a></li>
+        <li class="dropdown-mobile">
+          <a href="comunidade.html" class="dropdown-mobile-trigger">Comunidade</a>
+          <ul class="dropdown-mobile-menu">
+            <li><a href="comunidade.html">Comunidade</a></li>
+            <li><a href="torneios.html">Torneios</a></li>
+            <li><a href="quadras.html">Quadras</a></li>
+            <li><a href="loja.html">Loja</a></li>
+          </ul>
+        </li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li class="sidebar-profile">
+          <a href="perfil.html" class="sidebar-profile-link">
+            <div class="sidebar-avatar">
+              <img src="../../assets/imgs/AMANDA-11.png" alt="Perfil">
+            </div>
+            <span>Meu Perfil</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Overlay para fechar menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  </header>
+
+  <!-- Logo fixa que aparece ao rolar -->
+  <div class="fixed-logo" id="fixedLogo" aria-hidden="true">
+    <a href="../../index.html" class="fixed-logo-link">
+      <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+    </a>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section do Perfil -->
+    <section class="profile-hero">
+      <div class="profile-hero-bg">
+        <img src="../../assets/imgs/mercado-livre-arena-pacaembu.jpg.png" alt="Background">
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="profile-hero-content">
+        <div class="container">
+          <div class="profile-header">
+            <div class="profile-avatar-large">
+              <img src="../../assets/imgs/AMANDA-11.png" alt="Amanda" id="profileAvatarLarge">
+              <button class="edit-avatar-btn" id="editAvatarBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="profile-info">
+              <h1 class="profile-name-large" id="profileNameLarge">Amanda Guterres</h1>
+              <p class="profile-role" id="profileRole">Jogadora • Atacante</p>
+              <div class="profile-stats">
+                <div class="stat">
+                  <span class="stat-number">22</span>
+                  <span class="stat-label">Anos</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">5</span>
+                  <span class="stat-label">Anos de Carreira</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">47</span>
+                  <span class="stat-label">Gols</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-actions">
+              <button class="btn btn-primary" id="editProfileBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+                </svg>
+                Editar Perfil
+              </button>
+              <button class="btn btn-secondary" id="shareProfileBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" />
+                </svg>
+                Compartilhar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="profile-content">
+      <div class="container">
+        <div class="profile-layout">
+          <!-- Sidebar do Perfil -->
+          <aside class="profile-sidebar">
+            <div class="profile-nav">
+              <button class="profile-nav-item active" data-section="biografia">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+                Biografia
+              </button>
+              <button class="profile-nav-item" data-section="videos">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" />
+                </svg>
+                Meus Vídeos
+              </button>
+              <button class="profile-nav-item" data-section="estatisticas">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
+                </svg>
+                Estatísticas
+              </button>
+              <button class="profile-nav-item" data-section="conquistas">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Conquistas
+              </button>
+            </div>
+          </aside>
+
+          <!-- Conteúdo Principal -->
+          <div class="profile-main">
+            <!-- Seção Biografia -->
+            <section class="profile-section active" id="biografia">
+              <div class="section-header">
+                <h2>Biografia</h2>
+                <button class="edit-section-btn" id="editBiographyBtn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+                  </svg>
+                  Editar
+                </button>
+              </div>
+
+              <div class="biography-content">
+                <div class="biography-card">
+                  <div class="biography-info">
+                    <div class="info-item">
+                      <span class="info-label">Idade:</span>
+                      <span class="info-value">22 anos</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-label">Posição:</span>
+                      <span class="info-value">Atacante</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-label">Pé Dominante:</span>
+                      <span class="info-value">Direito</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-label">Altura:</span>
+                      <span class="info-value">1,68m</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-label">Time Atual:</span>
+                      <span class="info-value">Palmeiras</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-label">Cidade:</span>
+                      <span class="info-value">São Paulo, SP</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="biography-text">
+                  <h3>Sobre Mim</h3>
+                  <p>
+                    Olá! Sou Amanda Guterres, uma apaixonada pelo futebol feminino desde os 8 anos de idade.
+                    Comecei minha jornada no futebol jogando nas categorias de base do São Paulo FC, onde
+                    desenvolvi minha paixão pelo esporte e minha técnica como atacante.
+                  </p>
+                  <p>
+                    Atualmente, faço parte do elenco do Palmeiras, onde tenho a oportunidade de crescer
+                    como jogadora e contribuir para o desenvolvimento do futebol feminino no Brasil.
+                    Acredito que o futebol vai muito além do campo - é sobre determinação, trabalho em
+                    equipe e superação de desafios.
+                  </p>
+                  <p>
+                    Meu objetivo é continuar evoluindo como atleta e inspirar outras meninas a
+                    seguirem seus sonhos no futebol. O esporte me ensinou valores que carrego para
+                    toda a vida: disciplina, resiliência e a importância de nunca desistir.
+                  </p>
+                </div>
+
+                <div class="biography-achievements">
+                  <h3>Principais Conquistas</h3>
+                  <div class="achievements-grid">
+                    <div class="achievement-item">
+                      <div class="achievement-icon">🏆</div>
+                      <div class="achievement-text">
+                        <h4>Campeonato Paulista 2023</h4>
+                        <p>Artilheira da competição com 12 gols</p>
+                      </div>
+                    </div>
+                    <div class="achievement-item">
+                      <div class="achievement-icon">🥇</div>
+                      <div class="achievement-text">
+                        <h4>Copa do Brasil 2022</h4>
+                        <p>Vice-campeã com o Palmeiras</p>
+                      </div>
+                    </div>
+                    <div class="achievement-item">
+                      <div class="achievement-icon">⭐</div>
+                      <div class="achievement-text">
+                        <h4>Seleção Brasileira Sub-20</h4>
+                        <p>Convocada em 2021</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Seção Vídeos -->
+            <section class="profile-section" id="videos">
+              <div class="section-header">
+                <h2>Meus Vídeos</h2>
+                <button class="btn btn-primary" id="addVideoBtn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg>
+                  Adicionar Vídeo
+                </button>
+              </div>
+
+              <div class="videos-content">
+                <div class="videos-grid">
+                  <div class="video-item">
+                    <div class="video-thumbnail">
+                      <img src="../../assets/imgs/AMANDA-11.png" alt="Gol de falta">
+                      <div class="video-overlay">
+                        <button class="play-btn">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="video-duration">2:34</div>
+                    </div>
+                    <div class="video-info">
+                      <h4>Gol de falta incrível!</h4>
+                      <p>Final do Campeonato Paulista 2023</p>
+                      <div class="video-stats">
+                        <span class="views">1.2k visualizações</span>
+                        <span class="date">há 2 dias</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="video-item">
+                    <div class="video-thumbnail">
+                      <img src="../../assets/imgs/AMANDA-GUTIERRES-5.png" alt="Treino técnico">
+                      <div class="video-overlay">
+                        <button class="play-btn">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="video-duration">4:12</div>
+                    </div>
+                    <div class="video-info">
+                      <h4>Treino técnico - Finalização</h4>
+                      <p>Exercícios de finalização no treino</p>
+                      <div class="video-stats">
+                        <span class="views">856 visualizações</span>
+                        <span class="date">há 1 semana</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="video-item">
+                    <div class="video-thumbnail">
+                      <img src="../../assets/imgs/BRENA-3.png" alt="Bastidores">
+                      <div class="video-overlay">
+                        <button class="play-btn">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="video-duration">3:45</div>
+                    </div>
+                    <div class="video-info">
+                      <h4>Bastidores do vestiário</h4>
+                      <p>Momento de descontração com as companheiras</p>
+                      <div class="video-stats">
+                        <span class="views">2.1k visualizações</span>
+                        <span class="date">há 2 semanas</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="video-item">
+                    <div class="video-thumbnail">
+                      <img src="../../assets/imgs/BRUNA-HIRATA-3.png" alt="Drible">
+                      <div class="video-overlay">
+                        <button class="play-btn">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="video-duration">1:58</div>
+                    </div>
+                    <div class="video-info">
+                      <h4>Drible e gol!</h4>
+                      <p>Jogada individual que resultou em gol</p>
+                      <div class="video-stats">
+                        <span class="views">3.4k visualizações</span>
+                        <span class="date">há 3 semanas</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="load-more">
+                  <button class="btn btn-secondary">Carregar Mais Vídeos</button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Seção Estatísticas -->
+            <section class="profile-section" id="estatisticas">
+              <div class="section-header">
+                <h2>Estatísticas</h2>
+                <div class="stats-filter">
+                  <select class="filter-select" id="statsFilter">
+                    <option value="2024">Temporada 2024</option>
+                    <option value="2023">Temporada 2023</option>
+                    <option value="2022">Temporada 2022</option>
+                    <option value="all">Todas as Temporadas</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="stats-content">
+                <div class="stats-grid">
+                  <div class="stat-card">
+                    <div class="stat-icon">⚽</div>
+                    <div class="stat-info">
+                      <h3>47</h3>
+                      <p>Gols Marcados</p>
+                    </div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-info">
+                      <h3>23</h3>
+                      <p>Assistências</p>
+                    </div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon">🏃‍♀️</div>
+                    <div class="stat-info">
+                      <h3>89</h3>
+                      <p>Jogos Disputados</p>
+                    </div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-info">
+                      <h3>7,234</h3>
+                      <p>Minutos Jogados</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stats-details">
+                  <div class="stats-chart">
+                    <h3>Gols por Temporada</h3>
+                    <div class="chart-container">
+                      <div class="chart-bar">
+                        <div class="bar" style="height: 60%">
+                          <span class="bar-value">12</span>
+                        </div>
+                        <span class="bar-label">2024</span>
+                      </div>
+                      <div class="chart-bar">
+                        <div class="bar" style="height: 100%">
+                          <span class="bar-value">20</span>
+                        </div>
+                        <span class="bar-label">2023</span>
+                      </div>
+                      <div class="chart-bar">
+                        <div class="bar" style="height: 75%">
+                          <span class="bar-value">15</span>
+                        </div>
+                        <span class="bar-label">2022</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Seção Conquistas -->
+            <section class="profile-section" id="conquistas">
+              <div class="section-header">
+                <h2>Conquistas</h2>
+              </div>
+
+              <div class="achievements-content">
+                <div class="achievements-timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <div class="marker-icon">🏆</div>
+                    </div>
+                    <div class="timeline-content">
+                      <h3>Campeonato Paulista 2023</h3>
+                      <p class="timeline-date">Dezembro 2023</p>
+                      <p>Artilheira da competição com 12 gols em 8 jogos, ajudando o Palmeiras a conquistar o título
+                        estadual.</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <div class="marker-icon">🥇</div>
+                    </div>
+                    <div class="timeline-content">
+                      <h3>Copa do Brasil 2022</h3>
+                      <p class="timeline-date">Novembro 2022</p>
+                      <p>Vice-campeã da Copa do Brasil, marcando 8 gols durante a competição e sendo eleita uma das
+                        melhores atacantes.</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <div class="marker-icon">⭐</div>
+                    </div>
+                    <div class="timeline-content">
+                      <h3>Seleção Brasileira Sub-20</h3>
+                      <p class="timeline-date">Março 2021</p>
+                      <p>Primeira convocação para a Seleção Brasileira Sub-20, representando o país em amistosos
+                        internacionais.</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <div class="marker-icon">🎯</div>
+                    </div>
+                    <div class="timeline-content">
+                      <h3>Melhor Atacante do Paulista</h3>
+                      <p class="timeline-date">Dezembro 2020</p>
+                      <p>Reconhecida como a melhor atacante do Campeonato Paulista Sub-18, marcando 15 gols na
+                        temporada.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de Edição de Perfil -->
+  <div class="modal" id="editProfileModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Editar Perfil</h2>
+        <button class="modal-close" id="closeEditModal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="edit-form" id="editProfileForm">
+          <div class="form-group">
+            <label for="editName">Nome Completo</label>
+            <input type="text" id="editName" value="Amanda Guterres">
+          </div>
+          <div class="form-group">
+            <label for="editPosition">Posição</label>
+            <select id="editPosition">
+              <option value="atacante">Atacante</option>
+              <option value="meio-campo">Meio-Campo</option>
+              <option value="defensora">Defensora</option>
+              <option value="goleira">Goleira</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="editAge">Idade</label>
+            <input type="number" id="editAge" value="22">
+          </div>
+          <div class="form-group">
+            <label for="editTeam">Time Atual</label>
+            <input type="text" id="editTeam" value="Palmeiras">
+          </div>
+          <div class="form-group">
+            <label for="editCity">Cidade</label>
+            <input type="text" id="editCity" value="São Paulo, SP">
+          </div>
+          <div class="form-group">
+            <label for="editBio">Biografia</label>
+            <textarea id="editBio"
+              rows="5">Olá! Sou Amanda Guterres, uma apaixonada pelo futebol feminino desde os 8 anos de idade...</textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancelEdit">Cancelar</button>
+        <button class="btn btn-primary" id="saveEdit">Salvar Alterações</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/perfil.js" defer></script>
+</body>
+
+</html>

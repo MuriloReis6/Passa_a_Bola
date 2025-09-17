@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícias - Passa a Bola | Futebol Feminino</title>
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/noticias.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <!-- Menu Hambúrguer (apenas mobile) -->
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+
+      <!-- Logo Centralizada -->
+      <div class="logo">
+        <a href="../../index.html" class="logo-link">
+          <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+        </a>
+      </div>
+
+      <!-- Menu de Navegação (apenas desktop) -->
+      <div class="nav-menu">
+        <a href="./times.html" class="nav-link">Times</a>
+        <a href="./jogos.html" class="nav-link">Jogos</a>
+        <div class="dropdown-container">
+          <a href="./comunidade.html" class="nav-link dropdown-trigger">Comunidade</a>
+          <div class="dropdown-menu">
+            <a href="./comunidade.html" class="dropdown-item">Comunidade</a>
+            <a href="./torneios.html" class="dropdown-item">Torneios</a>
+            <a href="./quadras.html" class="dropdown-item">Quadras</a>
+            <a href="./loja.html" class="dropdown-item">Loja</a>
+          </div>
+        </div>
+        <a href="./noticias.html" class="nav-link active">Notícias</a>
+      </div>
+
+      <!-- Barra de Busca e Login -->
+      <div class="header-actions">
+        <!-- Barra de Busca -->
+        <div class="search-container">
+          <div class="search-box" id="searchBox">
+            <input type="text" placeholder="Buscar notícias..." id="searchInput">
+            <button class="search-btn" id="searchBtn">
+              <svg width="20" height="20" viewBox="0 0 512 512" fill="currentColor">
+                <path
+                  d="M456.69 421.39 362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3zM97.92 222.72a124.8 124.8 0 1 1 124.8 124.8 124.95 124.95 0 0 1-124.8-124.8z">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Botão de Login -->
+        <div class="login-container">
+          <a href="./login.html" class="login-btn" id="loginBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+            <span class="login-text">Login</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Menu Lateral -->
+    <div class="sidebar-menu" id="sidebarMenu">
+      <div class="sidebar-header">
+        <h3>Menu</h3>
+        <button class="close-btn" id="closeMenu">✕</button>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="./times.html">Times</a></li>
+        <li><a href="./jogos.html">Jogos</a></li>
+        <li class="dropdown-mobile">
+          <a href="./comunidade.html" class="dropdown-mobile-trigger">Comunidade</a>
+          <ul class="dropdown-mobile-menu">
+            <li><a href="./comunidade.html">Comunidade</a></li>
+            <li><a href="./torneios.html">Torneios</a></li>
+            <li><a href="./quadras.html">Quadras</a></li>
+            <li><a href="./loja.html">Loja</a></li>
+          </ul>
+        </li>
+        <li><a href="./noticias.html">Notícias</a></li>
+      </ul>
+    </div>
+
+    <!-- Overlay para fechar menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  </header>
+
+  <!-- Logo fixa que aparece ao rolar -->
+  <div class="fixed-logo" id="fixedLogo" aria-hidden="true">
+    <a href="../../index.html" class="fixed-logo-link">
+      <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+    </a>
+  </div>
+
+
+  <!-- Filtros e Categorias -->
+  <section class="news-filters">
+    <div class="container">
+      <div class="filters-header">
+        <h2>Categorias</h2>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-category="todas">Todas</button>
+          <button class="filter-btn" data-category="selecao">Seleção</button>
+          <button class="filter-btn" data-category="brasileirao">Brasileirão</button>
+          <button class="filter-btn" data-category="internacional">Internacional</button>
+          <button class="filter-btn" data-category="tecnologia">Tecnologia</button>
+          <button class="filter-btn" data-category="mercado">Mercado</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notícias em Destaque -->
+  <section class="featured-news">
+    <div class="container">
+      <h2 class="section-title">Destaques</h2>
+      <div class="featured-grid">
+        <!-- Notícia Principal -->
+        <article class="featured-main">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img src="../../assets/imgs/G0Qyfk7WYAAPfps.png" alt="Brasileirão Feminino">
+            </div>
+            <div class="news-content">
+              <h3>Corinthians e Cruzeiro empatam na final do Brasileirão Feminino</h3>
+              <p>Jogo emocionante termina em 1x1 e decisão será no segundo jogo em São Paulo. Mais de 15 mil torcedores
+                compareceram ao Mineirão.</p>
+              <div class="news-meta">
+                <span class="news-date">8 de Setembro, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid de Notícias -->
+  <section class="news-grid-section">
+    <div class="container">
+      <div class="news-grid">
+        <!-- Notícia VAR -->
+        <article class="news-card" data-category="tecnologia">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img src="../../assets/imgs/image.png" alt="VAR no Futebol Feminino">
+            </div>
+            <div class="news-content">
+              <h4>CBF anuncia implementação do VAR em todas as divisões</h4>
+              <p>Nova tecnologia será utilizada no Brasileirão, Copa do Brasil e estaduais a partir de 2025.</p>
+              <div class="news-meta">
+                <span class="news-date">14 de Janeiro, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Notícia Desenvolvimento -->
+        <article class="news-card" data-category="desenvolvimento">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img src="../../assets/imgs/4939080_9aeaece150b29ee.jpg" alt="Categorias de Base">
+            </div>
+            <div class="news-content">
+              <h4>Novo programa de desenvolvimento para categorias de base</h4>
+              <p>CBF investe R$ 10 milhões em projeto que visa revelar novas promessas do futebol feminino.</p>
+              <div class="news-meta">
+                <span class="news-date">13 de Janeiro, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Notícia 1 -->
+        <article class="news-card" data-category="selecao">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img src="../../assets/imgs/WhatsApp-Image-2025-08-02-at-21.56.02-1-1024x684.jpeg"
+                alt="Seleção Brasileira">
+            </div>
+            <div class="news-content">
+              <h4>Bastidores do título da Copa América Feminina</h4>
+              <p>Confira os momentos mais emocionantes da conquista histórica da Seleção Brasileira na Copa América.</p>
+              <div class="news-meta">
+                <span class="news-date">12 de Janeiro, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Notícia 2 -->
+        <article class="news-card" data-category="brasileirao">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img src="../../assets/imgs/selecao_bras_fem_fut_amist_colombia.png" alt="Brasileirão Feminino">
+            </div>
+            <div class="news-content">
+              <h4>É do Brasil!</h4>
+              <p>Copa do mundo feminina de 2027 terá como sede o Brasil, a primeira realizada na
+                América do Sul.</p>
+              <div class="news-meta">
+                <span class="news-date">11 de Maio, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Notícia 3 -->
+        <article class="news-card" data-category="mercado">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img src="../../assets/imgs/mercado-livre-arena-pacaembu.jpg.png" alt="Investimentos">
+            </div>
+            <div class="news-content">
+              <h4>CBF investe R$ 50 milhões em modernização de estádios</h4>
+              <p>Projeto inclui melhorias em 15 arenas de todo o Brasil para receber jogos do futebol feminino.</p>
+              <div class="news-meta">
+                <span class="news-date">10 de Agosto, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Notícia 4 -->
+        <article class="news-card" data-category="internacional">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img src="../../assets/imgs/torcida.png" alt="Público Recorde">
+            </div>
+            <div class="news-content">
+              <h4>Os 10 maiores públicos do futebol feminino no Brasil</h4>
+              <p>Ranking mostra a evolução da torcida e o crescimento do interesse pelo esporte no país.</p>
+              <div class="news-meta">
+                <span class="news-date">9 de Setembro, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Notícia 5 -->
+        <article class="news-card" data-category="tecnologia">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img src="../../assets/imgs/var.png" alt="Tecnologia no Futebol">
+            </div>
+            <div class="news-content">
+              <h4>VAR analisado: os lances mais polêmicos da temporada</h4>
+              <p>Revisão dos principais lances analisados pelo árbitro de vídeo no futebol feminino brasileiro.</p>
+              <div class="news-meta">
+                <span class="news-date">14 de Setembro, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Notícia 6 -->
+        <article class="news-card" data-category="selecao">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img src="../../assets/imgs/arrecadação.jpg" alt="Jogadora Amanda">
+            </div>
+            <div class="news-content">
+              <h4>Recorde histórico na final do Brasileirão Feminino</h4>
+              <p>Corinthians atinge renda bruta maior que R$1,2 milhões sendo a maior da história do futebol feminino no
+                Brasil</p>
+              <div class="news-meta">
+                <span class="news-date">14 de Setembro, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Notícia 7 -->
+        <article class="news-card" data-category="brasileirao">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img src="../../assets/imgs/olivia-smith.png" alt="Palmeiras Feminino">
+            </div>
+            <div class="news-content">
+              <h4>Arsenal quebra recorde com contratação milionária</h4>
+              <p>A atacante canadense Olivia Smith chega ao Arsenal por 1 milhão de libras (R$ 7,52 milhões), sendo a
+                contratação mais cara da história do futebol feminino.</p>
+              <div class="news-meta">
+                <span class="news-date">11 de Julho, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Notícia 8 -->
+        <article class="news-card" data-category="internacional">
+          <a href="#" class="news-link">
+            <div class="news-image">
+              <img
+                src="../../assets/imgs/20-05-2023-Brasileirao-Feminino-2023-Palmeiras-vs-Ferroviaria-Foto-Rebeca-Reis-2508-2000x1200.jpg"
+                alt="Bruna Hirata">
+            </div>
+            <div class="news-content">
+              <h4>Amanda Gutierres termina 2025 como artilheira do Brasileirão Feminino</h4>
+              <p>Com 17 gols em 19 jogos, a atacante do palmeiras e da seleçao brasileira finaliza o campeonato com a
+                artilharia.</p>
+              <div class="news-meta">
+                <span class="news-date">15 de Setembro, 2025</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Botão Carregar Mais -->
+      <div class="load-more-container">
+        <button class="load-more-btn" id="loadMoreBtn">
+          <span>Carregar Mais Notícias</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h3>Receba as notícias em primeira mão</h3>
+          <p>Cadastre-se em nossa newsletter e fique por dentro de todas as novidades do futebol feminino</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Seu melhor e-mail" required>
+          <button type="submit">Inscrever-se</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Seção Principal do Footer -->
+      <div class="footer-main">
+        <!-- Logo e Descrição -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../../assets/imgs/logo.png" alt="Passa a Bola">
+          </div>
+          <p class="footer-description">
+            A plataforma definitiva para o futebol feminino brasileiro. Conectamos jogadoras,
+            torcedoras e entusiastas em uma comunidade apaixonada pelo esporte.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/passabola" class="social-link" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+              Instagram
+            </a>
+            <a href="https://www.youtube.com/@passabola" class="social-link" target="_blank" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+              YouTube
+            </a>
+            <a href="https://www.twitter.com/passabola" class="social-link" target="_blank" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+              </svg>
+              Twitter
+            </a>
+            <a href="https://www.facebook.com/passabola" class="social-link" target="_blank" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+
+        <!-- Links de Navegação -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3 class="footer-title">Navegação</h3>
+            <ul class="footer-list">
+              <li><a href="../../index.html" class="footer-link">Início</a></li>
+              <li><a href="times.html" class="footer-link">Times</a></li>
+              <li><a href="jogos.html" class="footer-link">Jogos</a></li>
+              <li><a href="torneios.html" class="footer-link">Torneios</a></li>
+              <li><a href="comunidade.html" class="footer-link">Comunidade</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-title">Recursos</h3>
+            <ul class="footer-list">
+              <li><a href="loja.html" class="footer-link">Loja</a></li>
+              <li><a href="noticias.html" class="footer-link">Notícias</a></li>
+              <li><a href="#estatisticas" class="footer-link">Estatísticas</a></li>
+              <li><a href="#calendario" class="footer-link">Calendário</a></li>
+              <li><a href="#podcast" class="footer-link">Podcast</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-title">Suporte</h3>
+            <ul class="footer-list">
+              <li><a href="#ajuda" class="footer-link">Central de Ajuda</a></li>
+              <li><a href="#contato" class="footer-link">Contato</a></li>
+              <li><a href="#faq" class="footer-link">FAQ</a></li>
+              <li><a href="#tutorial" class="footer-link">Tutoriais</a></li>
+              <li><a href="#reportar" class="footer-link">Reportar Problema</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-title">Legal</h3>
+            <ul class="footer-list">
+              <li><a href="#privacidade" class="footer-link">Política de Privacidade</a></li>
+              <li><a href="#termos" class="footer-link">Termos de Uso</a></li>
+              <li><a href="#cookies" class="footer-link">Política de Cookies</a></li>
+              <li><a href="#lgpd" class="footer-link">LGPD</a></li>
+              <li><a href="#licencas" class="footer-link">Licenças</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção Inferior -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <div class="footer-copyright">
+            <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.</p>
+            <p class="footer-motto">"Conectando o futebol feminino brasileiro"</p>
+          </div>
+
+          <div class="footer-partners">
+            <span class="partners-label">Parceiros:</span>
+            <div class="partners-logos">
+              <span class="partner-text">CBF</span>
+              <span class="partner-text">ADIDAS</span>
+            </div>
+          </div>
+
+          <div class="footer-back-to-top">
+            <button class="back-to-top-btn" id="backToTopBtn" aria-label="Voltar ao topo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/noticias.js" defer></script>
+  <script src="../js/footer.js" defer></script>
+</body>
+
+</html>
